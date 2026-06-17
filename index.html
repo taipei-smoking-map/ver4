@@ -34,8 +34,6 @@
         .card-distance { font-size: 13px; font-weight: bold; color: #e67e22; background: #fdf2e9; padding: 3px 8px; border-radius: 12px; }
         .card-detail { font-size: 13px; color: #555; margin: 5px 0; display: flex; align-items: center; gap: 5px; }
         .badge { display: inline-block; font-size: 11px; background: #eaedf0; color: #7f8c8d; padding: 2px 6px; border-radius: 4px; margin-top: 5px; }
-        
-        /* 彈出視窗微調，讓地圖字體更好讀 */
         .leaflet-popup-content-value { font-size: 13px; line-height: 1.4; }
     </style>
 </head>
@@ -104,7 +102,7 @@
             return R * c; 
         }
 
-        // 產生精緻的地圖彈出視窗 HTML
+        // 產生地圖彈出視窗 HTML
         function createPopupContent(area, extraInfo = "") {
             let html = `<div class="leaflet-popup-content-value">
                 <b style="font-size:15px; color:#2c3e50;">🚬 ${area.地點}</b> ${extraInfo}<br>
@@ -193,7 +191,6 @@
                             L.marker([area.緯度, area.經度]).addTo(markerGroup)
                                 .bindPopup(createPopupContent(area, `<span style="font-size:11px; background:#fdf2e9; color:#e67e22; padding:2px 6px; border-radius:10px; margin-left:5px;">離你 ${distStr}</span>`));
                             
-                            // 下方 GPS 列表卡片同步大升級！
                             listHtml += `
                                 <div class="area-card">
                                     <div class="card-header">
@@ -218,6 +215,7 @@
         <p>吸菸有害健康，戒菸可減少對健康的危害。</p>
         <p>萬芳高中自主學習計劃：蔡均鑫、林彥呈、楊巧妍、廖廷瑋製作</p>
         <p>指導老師：萬芳高中鄭銘泉老師</p>
+        <p>資料來源：台北市資料大平台，本網站為民間開發之非營利網站，非臺北市政府官方網站，吸煙區資料取得時間：2026/06/13</p>
         <p><a href="#">Back to top</a></p>
     </footer>
 </body>
