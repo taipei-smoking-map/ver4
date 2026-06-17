@@ -136,7 +136,6 @@
                             .bindPopup(createPopupContent(area));
                     }
                     
-                    // 下方列表卡片同步大升級！
                     listHtml += `
                         <div class="area-card">
                             <div class="card-header">
@@ -187,7 +186,7 @@
                         nearbyAreas.forEach(area => {
                             let distStr = area.distance < 1 ? `${(area.distance * 1000).toFixed(0)} 公尺` : `${area.distance.toFixed(2)} 公里`;
                             
-                            // 地圖標記泡泡同步加入距離與細節
+                            // 地圖標記同步加入距離與細節
                             L.marker([area.緯度, area.經度]).addTo(markerGroup)
                                 .bindPopup(createPopupContent(area, `<span style="font-size:11px; background:#fdf2e9; color:#e67e22; padding:2px 6px; border-radius:10px; margin-left:5px;">離你 ${distStr}</span>`));
                             
